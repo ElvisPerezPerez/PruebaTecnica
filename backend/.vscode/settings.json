@@ -1,0 +1,11 @@
+{
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+  // "material-icon-theme.activeIconPack": "nest",
+  // "workbench.iconTheme": "material-icon-theme",
+  // "material-icon-theme.files.associations": {
+  //   "*.ts": "nestjs"
+  // },
+  // "typescript.tsserver.maxTsServerMemory": 4096
+}

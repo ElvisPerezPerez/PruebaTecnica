@@ -1,0 +1,49 @@
+generator client {
+  provider     = "prisma-client"
+  output       = "../generated/prisma"
+  moduleFormat = "cjs"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id           Int     @id @default(autoincrement())
+  roleId       Int     @default(1) @map("role_id")
+  email        String  @unique
+  name         String?
+  numberPhone  String? @map("number_phone")
+  password     String
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([email, numberPhone])
+  @@map("user")
+}
+model Card{
+  id          Int     @id @default(autoincrement())
+  userId      Int     @map("user_id")
+  cardNumber  String  @unique @map("card_number")
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([cardNumber])
+  @@map("card")
+}
+
+model Payment {
+  id          Int     @id @default(autoincrement())
+  userId      Int     @map("user_id")
+  cardId      Int     @map("card_id")
+  amount      Decimal
+  status      String
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([userId, cardId])
+  @@map("payment")
+}

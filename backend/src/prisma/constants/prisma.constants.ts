@@ -1,0 +1,3 @@
+export const TIMEOUT_TRANSACTIONS = 100_000;
+export const RETRIES_CONNECTIONS = 10;
+export const DELAY_IN_MILISECONDS = 2000;

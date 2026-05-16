@@ -1,0 +1,6 @@
+{
+  "type": "node",
+  "request": "attach",
+  "name": "Attach to NestJS",
+  "port": 9229
+}
